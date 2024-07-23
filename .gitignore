@@ -1,0 +1,57 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+.env
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# next-dynamodb specific
+next-dynamodb/node_modules/
+next-dynamodb/.pnp
+next-dynamodb/.pnp.js
+next-dynamodb/.yarn/install-state.gz
+next-dynamodb/coverage
+next-dynamodb/.next
+next-dynamodb/out
+next-dynamodb/build
+next-dynamodb/.DS_Store
+next-dynamodb/*.pem
+next-dynamodb/.env
+next-dynamodb/npm-debug.log*
+next-dynamodb/yarn-debug.log*
+next-dynamodb/yarn-error.log*
+next-dynamodb/.env*.local
+next-dynamodb/.vercel
+next-dynamodb/*.tsbuildinfo
+next-dynamodb/next-env.d.ts
