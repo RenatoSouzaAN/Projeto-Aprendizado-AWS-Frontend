@@ -81,4 +81,4 @@ Se encontrar problemas, siga estas etapas de solução de problemas:
 
 Informações Adicionais
 
-Por conta de dificuldades em configurar a integração entre ".env" e as credenciais da AWS, a área onde são escritas as credenciais está em branco. Sendo necessário por o valor bruto. Esta área sendo o "config" dentro do arquivo "aws.js", localizado em "projeto-luiggi-front/next-dynamodb/src/app/utils".
+Pode-se encontrar dificuldades na integração entre ".env" e as credenciais da AWS,sendo necessário por o valor bruto no arquivo "aws.js", localizado em "projeto-luiggi-front/next-dynamodb/src/app/utils".
