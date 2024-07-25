@@ -29,7 +29,7 @@ Instalação
 
     bash
 
-git clone https://github.com/seu-nome-de-usuario/seu-projeto.git
+git clone https://github.com/RenatoSouzaAN/Projeto-Aprendizado-AWS-Frontend
 
 Acesse o diretório do projeto:
 
