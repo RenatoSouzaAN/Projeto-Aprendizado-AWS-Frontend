@@ -1,97 +1,98 @@
-# Projeto-AWS (AWS-Lambda + SQS + DynamoDB + NodeJS)
-Projeto de aprendizado onde uma API POST em NodeJS recebe um payload de uma transação (idempotencyId, amount, type: credit /debit).
+# AWS-Project (AWS-Lambda + SQS + DynamoDB + NodeJS)
+Learning project where a POST API in NodeJS receives a payload of a transaction (idempotencyId, amount, type: credit /debit).
 
-Essa rota executa uma função que coloca a transação em uma AWS SQS (fila), usando SDK da AWS.
+This route executes a function that puts the transaction into an AWS SQS (queue), using the AWS SDK.
 
-Junto, uma função AWS Lambda conectada nessa SQS que pegua cada mensagem e salva num banco de dados AWS DynamoDB.
+Alongside, an AWS Lambda function connected to this SQS picks up each message and saves it into an AWS DynamoDB database.
 
-Foi criado um script de teste para criar 100 transações diferentes e fazer a requisição POST.
+A test script was created to generate 100 different transactions and make the POST request.
 
-Foi feita uma tela simples usando Next.JS que exibe as transações salvas no DynamoDB, a partir de uma rota GET.
+A simple screen was made using Next.JS that displays the transactions saved in DynamoDB, through a GET route.
 
 
-Link para o back-end: https://github.com/RenatoSouzaAN/Projeto-Aprendizado-AWS-Backend
+Link to the back-end: https://github.com/RenatoSouzaAN/Projeto-Aprendizado-AWS-Backend
 
-## Parte front-end do projeto
+## Front-end part of the project
 
-Configuração
+Setup
 
-Siga os passos abaixo para configurar e executar o projeto.
-Pré-requisitos
+Follow the steps below to configure and run the project.
+Prerequisites
 
-    Node.js e npm instalados em sua máquina
-    Conta AWS com credenciais (access key ID, secret access key)
-    AWS CLI instalado (para configurar o DynamoDB e SQS)
+    Node.js and npm installed on your machine
+    AWS account with credentials (access key ID, secret access key)
+    AWS CLI installed (to configure DynamoDB and SQS)
 
-Instalação
+Installation
 
-    Clone o repositório:
+    Clone the repository:
 
     bash
 
 git clone https://github.com/RenatoSouzaAN/Projeto-Aprendizado-AWS-Frontend
 
-Acesse o diretório do projeto:
+Access the project directory:
 
 bash
 
-cd seu-projeto
+cd your-project
 
-Instale as dependências:
+Install dependencies:
 
 bash
 
 npm install
 
-Dentro do arquivo aws.js, ponha suas credenciais AWS como mostra abaixo:
+Inside the aws.js file, put your AWS credentials as shown below:
 
 config = 
 
-    region: "sua-regiao-aws"
-    accessKeyId: "sua-access-key-id"
-    secretAccessKey: "sua-secret-access-key"
+    region: "your-aws-region"
+    accessKeyId: "your-access-key-id"
+    secretAccessKey: "your-secret-access-key"
 
-    Substitua sua-regiao-aws, sua-access-key-id e sua-secret-access-key por suas credenciais AWS reais.
+    Replace your-aws-region, your-access-key-id, and your-secret-access-key with your real AWS credentials.
 
-Executando o Projeto
 
-    Inicie o servidor:
+Running the Project
+
+    Start the server:
 
     bash
 
     npm run dev
 
-    Abra seu navegador e acesse http://localhost:3000 para visualizar a aplicação Next.js.
+    Open your browser and go to http://localhost:3000 to view the Next.js application.
 
-Estrutura do Projeto
+Project Structure
 
-Descreva brevemente a estrutura do seu projeto.
+Briefly describe the structure of your project.
 
-    /src: Contém o código-fonte da aplicação Next.js.
-        /app: Contém funções de utilidade e componentes.
-            /utils: Contém configuração e utilidades da AWS.
-        /pages: Contém páginas do Next.js.
+    /src: Contains the source code of the Next.js application.
+        /app: Contains utility functions and components.
+            /utils: Contains AWS configuration and utilities.
+        /pages: Contains Next.js pages.
 
-Recursos
+Features
 
-Liste os principais recursos do seu projeto.
+List the main features of your project.
 
-    Rota de API para enviar transações para AWS SQS
-    Função AWS Lambda para processar mensagens SQS e salvar no DynamoDB
-    Aplicação Next.js para exibir transações do DynamoDB
+    API route to send transactions to AWS SQS
+    AWS Lambda function to process SQS messages and save to DynamoDB
+    Next.js application to display transactions from DynamoDB
 
-Solução de Problemas
+Troubleshooting
 
-Se encontrar problemas, siga estas etapas de solução de problemas:
+If you encounter issues, follow these troubleshooting steps:
 
-    Variáveis de Ambiente: Verifique se as variáveis de ambiente no arquivo .env estão formatadas corretamente e foram carregadas.
+    Environment Variables: Check if the environment variables in the .env file are formatted correctly and loaded.
 
-    Dependências: Confirme se todas as dependências foram instaladas usando o comando npm install.
+    Dependencies: Make sure all dependencies were installed using the npm install command.
 
-    Credenciais AWS: Verifique suas credenciais AWS no arquivo .env.
+    AWS Credentials: Verify your AWS credentials in the .env file.
 
-    Ordem de Carregamento: Certifique-se de que o módulo dotenv seja carregado no início do arquivo de ponto de entrada do seu aplicativo.
+    Loading Order: Ensure that the dotenv module is loaded at the beginning of your app's entry file.
 
-Informações Adicionais
+Additional Information
 
-Pode-se encontrar dificuldades na integração entre ".env" e as credenciais da AWS,sendo necessário por o valor bruto no arquivo "aws.js", localizado em "projeto-luiggi-front/next-dynamodb/src/app/utils".
+There may be difficulties in integrating ".env" and AWS credentials, requiring the raw value to be placed in the "aws.js" file, located at "projeto-luiggi-front/next-dynamodb/src/app/utils".
